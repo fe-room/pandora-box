@@ -1,10 +1,11 @@
 import { useState, useCallback, useEffect, memo } from 'react'
 import { View, Image, ScrollView } from '@tarojs/components'
-import { Swiper,SwiperItem, Tabs, Empty } from '@nutui/nutui-react-taro';
+import TaroList from '@/components/taro-list'
+import { Swiper,SwiperItem, Tabs } from '@nutui/nutui-react-taro';
 import './index.scss'
 
 const Index = () => {
-
+  console.log('father')
   const tabList = [
     {
       title: '收藏',
@@ -40,12 +41,10 @@ const Index = () => {
     borderRadius: '10px',
     marginBottom: '20rpx'
   }
-  
-
+  const dataCount = 20
   const getData = useCallback(() => {
     const datas: string[] = []
     const pageSize = 10
-    const dataCount = 90
     if(dataList.length < dataCount) {
       for (let i = 0; i < pageSize; i++) {
         datas.push(`${i+ dataList.length} Item`)
@@ -60,10 +59,10 @@ const Index = () => {
     getData()
   }, [pageNo])
   
-  const ItemRender = ({ data }: any) => {
-    return <div style={itemStyle}>{data}</div>
+  const renderItem = ({ item }: any) => {
+    return <div style={itemStyle}>{item}</div>
   }
-  const ItemRenderMemo = memo(ItemRender)
+  const renderItemMemo = memo(renderItem)
 
   const onScroll = useCallback(() => {
     setpageNo((pageNo) => pageNo + 1);
@@ -95,15 +94,7 @@ const Index = () => {
         {
           tabList.map((item,index)=> {
             return  (<Tabs.TabPane  key={index}  title={item.title} >
-              <ScrollView
-                style={{ height: 'calc(100vh - 340px)'}}
-                scrollY
-                onScrollToLower={onScroll}
-              >
-                { dataList.map((it) => {
-                 return (<ItemRenderMemo data={it}></ItemRenderMemo>)
-                })}
-              </ScrollView>
+                <TaroList onScrollToLower={onScroll} dataCount={dataCount} scrollViewHeight={{ height: 'calc(100vh - 340px)'}} dataList={dataList} RenderItem={renderItemMemo}></TaroList>
             </Tabs.TabPane>)
           })
         }
