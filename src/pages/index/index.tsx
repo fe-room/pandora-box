@@ -2,6 +2,8 @@ import { useState, useCallback, useEffect, memo } from 'react'
 import { View, Image, ScrollView } from '@tarojs/components'
 import TaroList from '@/components/taro-list'
 import { Swiper,SwiperItem, Tabs } from '@nutui/nutui-react-taro';
+import { navigateTo } from '@tarojs/taro'
+
 import './index.scss'
 
 const Index = () => {
@@ -72,6 +74,13 @@ const Index = () => {
     // do something
   }
 
+  const onClick = () => {
+    console.log('gotoChat')
+    navigateTo({
+      url: '/second-packages/pages/chat-room/index'
+    })
+  }
+
   return (
     <View className='home'> 
       <Swiper
@@ -82,10 +91,7 @@ const Index = () => {
         onChange={onChange}
       >
         <SwiperItem >
-          <Image className='home-swiper-img' src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg"  />
-        </SwiperItem>
-        <SwiperItem >
-          <Image className='home-swiper-img' src="https://storage.360buyimg.com/jdc-article/NutUItaro2.jpg"  />
+          <Image onClick={onClick} className='home-swiper-img' src="https://storage.360buyimg.com/jdc-article/NutUItaro34.jpg"  />
         </SwiperItem>
       </Swiper>
       <Tabs value={tabvalue} onChange={({ paneKey }) => {

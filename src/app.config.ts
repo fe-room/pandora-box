@@ -4,6 +4,14 @@ export default defineAppConfig({
     'pages/award/index',
     'pages/mine/index'
   ],
+  subpackages: [
+    {
+      root: "second-packages",
+      pages: [
+        "pages/chat-room/index",
+      ]
+    }
+  ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',

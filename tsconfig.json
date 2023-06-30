@@ -26,8 +26,9 @@
       "@/utils/*": ["./src/utils/*"],
       "@/package": ["./package.json"],
       "@/project": ["./project.config.json"]
-    }
+    },
   },
   "include": ["./src", "./types"],
-  "compileOnSave": false
+  "exclude": ["./src/utils/tools.ts"],
+  "compileOnSave": false,
 }
