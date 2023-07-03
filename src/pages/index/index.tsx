@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, memo } from 'react'
-import { View, Image, ScrollView } from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 import TaroList from '@/components/taro-list'
 import { Swiper,SwiperItem, Tabs } from '@nutui/nutui-react-taro';
 import { navigateTo } from '@tarojs/taro'
@@ -100,7 +100,7 @@ const Index = () => {
         {
           tabList.map((item,index)=> {
             return  (<Tabs.TabPane  key={index}  title={item.title} >
-                <TaroList onScrollToLower={onScroll} dataCount={dataCount} scrollViewHeight={{ height: 'calc(100vh - 340px)'}} dataList={dataList} RenderItem={renderItemMemo}></TaroList>
+                <TaroList onScrollToLower={onScroll} dataCount={dataCount} scrollStyle={{ height: 'calc(100vh - 340px)'}} dataList={dataList} RenderItem={renderItemMemo}></TaroList>
             </Tabs.TabPane>)
           })
         }

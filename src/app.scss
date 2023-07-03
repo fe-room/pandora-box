@@ -1,1 +1,4 @@
-@import './styles/flex.scss'
+@import './styles/flex.scss';
+.safe-area {
+    padding-bottom: calc(constant(safe-area-inset-bottom))
+}

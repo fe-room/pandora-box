@@ -24,6 +24,7 @@ specifiers:
   '@tarojs/taro': 3.6.7
   '@tarojs/taro-loader': 3.6.7
   '@tarojs/webpack5-runner': 3.6.7
+  '@types/event-source-polyfill': ^1.0.1
   '@types/node': ^18.15.11
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
@@ -77,6 +78,7 @@ dependencies:
   '@tarojs/runtime': 3.6.7
   '@tarojs/shared': 3.6.7
   '@tarojs/taro': 3.6.7_@types+react@18.2.14
+  '@types/event-source-polyfill': 1.0.1
   axios: 1.4.0
   babel-loader: 9.1.2_e3b1b80fbcb24ca7b3917310962184e1
   event-source-polyfill: 1.0.31
@@ -2624,6 +2626,10 @@ packages:
   /@types/estree/1.0.1:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
+
+  /@types/event-source-polyfill/1.0.1:
+    resolution: {integrity: sha512-dls8b0lUgJ/miRApF0efboQ9QZnAm7ofTO6P1ILu8bRPxUFKDxVwFf8+TeuuErmNui6blpltyr7+eV72dbQXlQ==}
+    dev: false
 
   /@types/expect/1.20.4:
     resolution: {integrity: sha512-Q5Vn3yjTDyCMV50TB6VRIbQNxSE4OmZR86VSbGaNpfUolm0iePBB4KdEEHmxoY5sT2+2DIvXW0rvMDP2nHZ4Mg==}
