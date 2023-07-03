@@ -9,6 +9,7 @@ specifiers:
   '@tarojs/cli': 3.6.7
   '@tarojs/components': 3.6.7
   '@tarojs/helper': 3.6.7
+  '@tarojs/mobx': ^2.2.10
   '@tarojs/plugin-framework-react': 3.6.7
   '@tarojs/plugin-html': 3.6.7
   '@tarojs/plugin-platform-alipay': 3.6.7
@@ -46,6 +47,7 @@ specifiers:
   eslint-plugin-react: ^7.8.2
   eslint-plugin-react-hooks: ^4.2.0
   event-source-polyfill: ^1.0.31
+  mobx: 4.8.0
   postcss: ^8.4.18
   react: ^18.0.0
   react-dom: ^18.0.0
@@ -65,6 +67,7 @@ dependencies:
   '@nutui/nutui-react-taro': 1.5.9_react-dom@18.2.0+react@18.2.0
   '@tarojs/components': 3.6.7_@types+react@18.2.14
   '@tarojs/helper': 3.6.7
+  '@tarojs/mobx': 2.2.10_mobx@4.8.0
   '@tarojs/plugin-framework-react': 3.6.7_6a96617b5e0d2dbf084256ea0f9009cb
   '@tarojs/plugin-html': 3.6.7_@types+react@18.2.14
   '@tarojs/plugin-platform-alipay': 3.6.7_47f64565616ce9f4b97e79f45ae38c30
@@ -82,6 +85,7 @@ dependencies:
   axios: 1.4.0
   babel-loader: 9.1.2_e3b1b80fbcb24ca7b3917310962184e1
   event-source-polyfill: 1.0.31
+  mobx: 4.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-refresh: 0.11.0
@@ -2158,6 +2162,24 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@tarojs/mobx-common/2.2.10_mobx@4.8.0:
+    resolution: {integrity: sha512-tFfM13pDWQV+aXdmF1lc0S78QLJ34jn1Imug0xDjwdbUhysAjKXOox3MG6rxeGW7WfOH+pRrDvjEi8u7+eWCCA==}
+    peerDependencies:
+      mobx: 4.8.0
+    dependencies:
+      mobx: 4.8.0
+    dev: false
+
+  /@tarojs/mobx/2.2.10_mobx@4.8.0:
+    resolution: {integrity: sha512-frWde1/vvh/PioX1A21SYeCgiqzJoxhL7SrTZA7EtmPqv95tiEvfbYs+cMKYc02HAONYCVYnaWghf+i7unERmQ==}
+    dependencies:
+      '@tarojs/mobx-common': 2.2.10_mobx@4.8.0
+      '@tarojs/taro': 2.2.19
+    transitivePeerDependencies:
+      - mobx
+      - nervjs
+    dev: false
+
   /@tarojs/plugin-framework-react/3.6.7_6a96617b5e0d2dbf084256ea0f9009cb:
     resolution: {integrity: sha512-ancDdvY0YAscCepp3sACHHZUX0cgbtai02b36/MNksb/gf2iChcvTQub+EYS9vUSjfsADAfWesNRs8P3HNTcnw==}
     peerDependencies:
@@ -2413,6 +2435,14 @@ packages:
       - vue
     dev: true
 
+  /@tarojs/taro/2.2.19:
+    resolution: {integrity: sha512-6fYGgdObitLECGv+3eKsYaD4iMmuZ+CzGAEuj0IYR7+HRz+0v7PGkovf3F+hHev8xljluCOJWHRzqA3aEoCqlg==}
+    peerDependencies:
+      nervjs: ^1.5.0
+    dependencies:
+      '@tarojs/utils': 2.2.19
+    dev: false
+
   /@tarojs/taro/3.6.7_@types+react@18.2.14:
     resolution: {integrity: sha512-j1PPgAKEtdhGXliQGbFaqC7wtyezpqmEEakWEtD83Xdpr4riNePO7xgv9irYNP0cpkjVt3/hLeSddc54X1zh6w==}
     peerDependencies:
@@ -2433,6 +2463,10 @@ packages:
       '@tarojs/api': 3.6.7
       '@tarojs/runtime': 3.6.7
       '@types/react': 18.2.14
+
+  /@tarojs/utils/2.2.19:
+    resolution: {integrity: sha512-KA22Hu/YJ5Hd9L+DOS8kGM66Aqf3VREA3lzAKMTCaOnW8fV0ZDGn706jr+/ZLAjhqU4i9MbeTQHfBI614jVuXg==}
+    dev: false
 
   /@tarojs/webpack5-prebundle/3.6.7_ce8822f4db4637ad29b7942809f4a763:
     resolution: {integrity: sha512-Rx0eqSw648mrwe3YM5gldkgwf2SXpG3j8RPQFdvtLWhThdw/pw3VABl1vrtc6F8frsDVs/datPD+5fFTisZFVQ==}
@@ -7906,6 +7940,10 @@ packages:
 
   /mobile-detect/1.4.5:
     resolution: {integrity: sha512-yc0LhH6tItlvfLBugVUEtgawwFU2sIe+cSdmRJJCTMZ5GEJyLxNyC/NIOAOGk67Fa8GNpOttO3Xz/1bHpXFD/g==}
+
+  /mobx/4.8.0:
+    resolution: {integrity: sha512-uR6FnrK50UEbV+zTXkOI+R0pAMb7xA5mkAWnKTMBcN6hAh57qAa9r0XMvsiPgpb8dS3Kw1x0sNhrrUNUcM+Pug==}
+    dev: false
 
   /ms/2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}

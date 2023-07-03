@@ -52,16 +52,16 @@ const Index = () => {
       return <div style={itemStyle}>{item}</div>
     }
     const renderItemMemo = memo(renderItem)
-    // useEventSource(`${BASE_URL}/createSse`, {
-    //   headers: {
-    //       uid: uuid()
-    //   }
-    // })
+    useEventSource(`${BASE_URL}/createSse`, {
+      headers: {
+          uid: uuid()
+      }
+    })
     return <View className="chat-room">
-      <TaroList  hideEmpty={true} scrollStyle={{  height: `calc(100vh - ${safeHeight + 100}px)` , background: '#FAFAFA'}}  dataList={dataList} RenderItem={renderItemMemo}></TaroList>
+      <TaroList  hideEmpty={true} scrollStyle={{  height: `calc(100vh - ${safeHeight + 70}px)` , background: '#FAFAFA'}}  dataList={dataList} RenderItem={renderItemMemo}></TaroList>
       <View className='flex-row item-center' style={{paddingBottom: safeHeight + 'px'}}> 
         <TextArea 
-          style={{height: '80px', background: '#FAFAFA', padding: '20px'}}
+          style={{height: '70px', background: '#FAFAFA', padding: '10px 20px'}}
           defaultValue={chatText}
           placeholder={'请输入想要问的内容'}
           onChange={(value, event) => {
